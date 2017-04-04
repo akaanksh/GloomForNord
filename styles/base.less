@@ -145,3 +145,73 @@ atom-text-editor.editor .bracket-matcher .region {
   color: @syntax-type-deprecated;
   border-bottom-color: @syntax-type-deprecated;
 }
+/* HAML */
+.syntax--haml {
+
+  .syntax--punctuation.syntax--embedded  {
+    color: @syntax-type-string-embedded;
+  }
+
+}
+/* JS */
+.syntax--js {
+
+	&.syntax--embedded {
+		.syntax--punctuation.syntax--embedded {
+	    color: @syntax-type-string-embedded;
+	  }
+	}
+
+}
+/* JSON */
+.syntax--json {
+
+	.syntax--constant {
+		color: @syntax-type-storage;
+	}
+	
+	.syntax--numeric {
+		color: @syntax-type-numeric;
+	}
+	
+	.syntax--string {
+		color: @syntax-type-lang;
+	}
+	
+	.syntax--punctuation.syntax--definition.syntax--string {
+		color: @syntax-type-comment;
+	}
+	
+	.syntax--structure.syntax--value {
+		& > .syntax--quoted.syntax--string {
+			color: @syntax-type-string;
+		}
+	}
+	
+}
+/* MARKDOWN */
+.syntax--markup.syntax--gfm {
+  &.syntax--heading {
+    color: @syntax-type-definition;
+  }
+  
+  &.syntax--underline.syntax--link {
+    color: @syntax-type-string;
+  }
+}
+
+.syntax--gfm .syntax--link {
+  &:hover {
+    background: fade(@syntax-type-structure, 20%);
+    border-radius: 2px;
+  }
+  
+  .syntax--entity {
+    color: @syntax-type-lang;
+  }
+  
+  .syntax--punctuation.syntax--begin,
+  .syntax--punctuation.syntax--end {
+    color: @syntax-type-comment;
+  }
+}
